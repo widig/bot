@@ -3,8 +3,9 @@
 var shell = require("./lib/Shell.js");
 var fp = new shell.ForkPacker();
 fp.from("./lib/Shell.js",0,41);
-console.log( "A",shell.Number( shell.String( fp.build("\r\n") ) ) );
-
+console.log( "A",shell.Number( shell.String( fp.build("\r\n",2) ),4 ) );
+fp.from("./lib/Admin.js",0,62);
+console.log( "B",shell.Number( shell.String( fp.build("\r\n",1) ),2 ) );
 
 var Admin = require("./lib/Admin.js");
 require = null;
